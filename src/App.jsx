@@ -7,7 +7,7 @@ function App() {
   const [editId, setEditId] = useState(null);
 
   const fetchData = () => {
-    fetch("http://localhost:8000/api/buku")
+    fetch("https://react-laravel-backend-production-83ba.up.railway.app//api/buku")
       .then((res) => res.json())
       .then((data) => setBuku(data));
   };
@@ -23,7 +23,7 @@ function App() {
 
     if (editId) {
       // UPDATE
-      fetch(`http://localhost:8000/api/buku/${editId}`, {
+      fetch(`https://react-laravel-backend-production-83ba.up.railway.app//api/buku/${editId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -35,7 +35,7 @@ function App() {
       });
     } else {
       // CREATE
-      fetch("http://localhost:8000/api/buku", {
+      fetch("https://react-laravel-backend-production-83ba.up.railway.app//api/buku", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -54,7 +54,7 @@ function App() {
   };
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:8000/api/buku/${id}`, {
+    fetch(`https://react-laravel-backend-production-83ba.up.railway.app//api/buku/${id}`, {
       method: "DELETE",
     }).then(() => fetchData());
   };
